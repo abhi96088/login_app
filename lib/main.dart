@@ -47,30 +47,36 @@ class _MyHomePageState extends State<MyHomePage> {
       body: SingleChildScrollView(
         child: SizedBox(
           width: double.infinity,
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  const Text("Don't have an account ?", style: TextStyle(color: Colors.green,),),
-                  const SizedBox(
-                    width: 5,
+          child: Column(children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                const Text(
+                  "Don't have an account ?",
+                  style: TextStyle(
+                    color: Colors.green,
                   ),
-                  OutlinedButton(
-                      onPressed: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => SignupScreen()));
-                      },
-                      child: const Text("Sign Up")
-                  ),
-                  const SizedBox(
-                    width: 5,
-                  )
-                ],
-              ),
-              const SizedBox(
-                height: 200,
-              ),
-              SizedBox(
+                ),
+                const SizedBox(
+                  width: 5,
+                ),
+                OutlinedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SignupScreen()));
+                    },
+                    child: const Text("Sign Up")),
+                const SizedBox(
+                  width: 5,
+                )
+              ],
+            ),
+            const SizedBox(
+              height: 200,
+            ),
+            SizedBox(
               width: 300,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -135,8 +141,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
             ),
-          ]
-          ),
+          ]),
         ),
       ),
     );
