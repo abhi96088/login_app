@@ -2,6 +2,7 @@ import 'package:experiment_app/home_screen.dart';
 import 'package:experiment_app/signup_screen.dart';
 import 'package:experiment_app/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(const MyApp());
@@ -123,7 +124,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     width: 300,
                     height: 50,
                     child: ElevatedButton(
-                        onPressed: () {
+                        onPressed: () async{
+                          var sharedPref = await SharedPreferences.getInstance();
+                          sharedPref.setBool("login", true);
+                          sharedPref.setString("name", controller.text.toString());
                           Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
